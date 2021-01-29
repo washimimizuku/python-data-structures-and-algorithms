@@ -1,4 +1,4 @@
-def count_bits (x):
+def count_bits (x): # O(n)
     num_bits = 0
     
     while x:
