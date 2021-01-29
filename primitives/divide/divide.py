@@ -1,4 +1,4 @@
-def divide(x, y):
+def divide(x, y): # O(n)
     result, power = 0, 32
     y_power = y << power
     while x >= y:
