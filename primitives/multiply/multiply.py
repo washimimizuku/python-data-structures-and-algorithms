@@ -1,4 +1,4 @@
-def multiply (x, y):
+def multiply (x, y): # O(n2)
     def add(a, b):
         running_sum, carryin, k, temp_a, temp_b = 0, 0, 1, a, b
         while temp_a or temp_b:

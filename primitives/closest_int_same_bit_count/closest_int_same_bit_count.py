@@ -1,4 +1,4 @@
-def closest_int_same_bit_count(x):
+def closest_int_same_bit_count(x): # O(n)
     NUM_UNSIGNED_BITS = 64
     for i in range(NUM_UNSIGNED_BITS - 1):
         if (x >> i) & 1 != (x >> (i + 1)) & 1:
