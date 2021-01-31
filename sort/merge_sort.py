@@ -24,6 +24,7 @@ def merge(left, right):
             right_index += 1
     return result + left[left_index:] + right[right_index:]
 
+
 numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 sorted_numbers = merge_sort(numbers)
 print(sorted_numbers)

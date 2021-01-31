@@ -14,7 +14,6 @@ def insertion_sort(array):
                         array[i] = temp
 
 
-
 numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
 insertion_sort(numbers)
 print(numbers)
