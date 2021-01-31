@@ -43,37 +43,29 @@ class BinarySearchTree:
             else:
                 current_node = current_node.right
 
-    def breadth_first_search_iterative(self):
-        current_node = self.root
-        my_list = []
-        queue = []
-        queue.append(current_node)
-
-        while len(queue) > 0:
-            current_node = queue.pop(0)
-            my_list.append(current_node.data)
-            if (current_node.left):
-                queue.append(current_node.left)
-            if (current_node.right):
-                queue.append(current_node.right)
-
-        return my_list
-            
-
-    def breadth_first_search_recursive(self, queue, my_list):
-        if len(queue) == 0:
-            return my_list
-
-        current_node = queue.pop(0)
-        my_list.append(current_node.data)
-
+    def dfs_in_order(self, current_node, my_list):
         if current_node.left:
-            queue.append(current_node.left)
-
+            self.dfs_in_order(current_node.left, my_list)
+        my_list.append(current_node.data)
         if current_node.right:
-            queue.append(current_node.right)
+            self.dfs_in_order(current_node.right, my_list)
+        return my_list
 
-        return self.breadth_first_search_recursive(queue, my_list)
+    def dfs_pre_order(self, current_node, my_list):
+        my_list.append(current_node.data)
+        if current_node.left:
+            self.dfs_pre_order(current_node.left, my_list)
+        if current_node.right:
+            self.dfs_pre_order(current_node.right, my_list)
+        return my_list
+
+    def dfs_post_order(self, current_node, my_list):
+        if current_node.left:
+            self.dfs_post_order(current_node.left, my_list)
+        if current_node.right:
+            self.dfs_post_order(current_node.right, my_list)
+        my_list.append(current_node.data)
+        return my_list
 
 
 binary_search_tree = BinarySearchTree()
@@ -85,5 +77,6 @@ binary_search_tree.insert(170)
 binary_search_tree.insert(15)
 binary_search_tree.insert(1)
 
-print(binary_search_tree.breadth_first_search_iterative())
-print(binary_search_tree.breadth_first_search_recursive([binary_search_tree.root], []))
+print(binary_search_tree.dfs_in_order(binary_search_tree.root, []))
+print(binary_search_tree.dfs_pre_order(binary_search_tree.root, []))
+print(binary_search_tree.dfs_post_order(binary_search_tree.root, []))
