@@ -4,7 +4,7 @@ the number of 1s on the word is odd
 '''
 
 
-def parity(x):  # O(n)
+def parity(x):  # Time: O(n)
     result = 0
 
     while x:
@@ -18,7 +18,7 @@ assert(parity(123)) == 0  # 123 | 1111011
 assert(parity(124)) == 1  # 124 | 1111100
 
 
-def parity_optimized(x):  # O(k); k = number of bits set to 1
+def parity_optimized(x):  # Time: O(k); k = number of bits set to 1
     result = 0
 
     while x:
@@ -32,7 +32,7 @@ assert(parity_optimized(123)) == 0  # 123 | 1111011
 assert(parity_optimized(124)) == 1  # 124 | 1111100
 
 
-def parity_with_caching(x):  # O(log n/L); L = width
+def parity_with_caching(x):  # Time: O(log n/L); L = width
     MASK_SIZE = 16
     BIT_MASK = 0xFFFF
     PRECOMPUTED_PARITY = {
@@ -57,7 +57,7 @@ assert(parity_with_caching(3)) == 0  # 3 | 11
 assert(parity_with_caching(4)) == 1  # 4 | 100
 
 
-def parity_with_32bit_xor(x):  # O(log n)
+def parity_with_32bit_xor(x):  # Time: O(log n)
     x ^= x >> 32
     x ^= x >> 16
     x ^= x >> 8

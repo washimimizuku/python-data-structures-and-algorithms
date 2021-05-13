@@ -5,7 +5,7 @@ overflow and underflow.
 '''
 
 
-def power(x, y):  # O(n)
+def power(x, y):  # Time: O(n)
     result, power = 1.0, y
     if y < 0:
         power, x = -power, 1.0 / x

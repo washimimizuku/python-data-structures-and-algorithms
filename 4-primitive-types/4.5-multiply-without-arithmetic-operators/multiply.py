@@ -5,7 +5,7 @@ and boolean comparisons
 '''
 
 
-def multiply(x, y):  # O(n2)
+def multiply(x, y):  # Time: O(n2)
     def add(a, b):
         running_sum, carryin, k, temp_a, temp_b = 0, 0, 1, a, b
         while temp_a or temp_b:

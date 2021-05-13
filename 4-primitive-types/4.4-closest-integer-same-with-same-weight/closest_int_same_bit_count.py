@@ -6,7 +6,7 @@ to x, but has the same weight as x and their difference,
 '''
 
 
-def closest_int_same_bit_count(x):  # O(n)
+def closest_int_same_bit_count(x):  # Time: O(n)
     NUM_UNSIGNED_BITS = 64
     for i in range(NUM_UNSIGNED_BITS - 1):
         if (x >> i) & 1 != (x >> (i + 1)) & 1:

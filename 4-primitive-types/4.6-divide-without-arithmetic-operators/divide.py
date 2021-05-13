@@ -5,7 +5,7 @@ operators.
 '''
 
 
-def divide(x, y):  # O(n)
+def divide(x, y):  # Time: O(n)
     result, power = 0, 32
     y_power = y << power
     while x >= y:

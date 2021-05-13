@@ -4,7 +4,7 @@ the bits at indices i and j
 '''
 
 
-def swap_bits(x, i, j):  # O(1)
+def swap_bits(x, i, j):  # Time: O(1)
     # Extract the i-th and j-th bits, and see if they differ.
     if (x >> 1) & 1 != (x >> j) & 1:
         # i-th and j-th bits differ. We will swap them by flipping their values.

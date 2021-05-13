@@ -7,7 +7,7 @@ is a palindrome.
 '''
 
 
-def is_palindrome_number(x):  # Time O(n) / Space O(1)
+def is_palindrome_number(x):  # Time: O(n) | Space: O(1)
     if x <= 0:
         return x == 0
 

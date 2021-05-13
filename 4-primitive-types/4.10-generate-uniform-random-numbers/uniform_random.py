@@ -9,7 +9,7 @@ equally likely.
 '''
 
 
-def uniform_random(lower_bound, upper_bound):  # O(log(b-a+1))
+def uniform_random(lower_bound, upper_bound):  # Time: O(log(b-a+1))
     number_of_outcomes = upper_bound - lower_bound + 1
     while True:
         result, i = 0, 0

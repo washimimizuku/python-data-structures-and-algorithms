@@ -4,7 +4,7 @@ set to 1 in a positive integer.
 """
 
 
-def count_bits(x):  # O(n)
+def count_bits(x):  # Time: O(2)
     num_bits = 0
 
     while x:
