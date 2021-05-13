@@ -1,2 +1,3 @@
 # python-data-structures-and-algorithms
-Python Data Structures and Algorithms
+
+This follows mostly the book "Elements of Programming Interviews in Python", by Adnan Aziz, Tsung-Hsien Lee and Amit Prakash.
