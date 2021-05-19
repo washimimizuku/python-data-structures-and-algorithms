@@ -8,13 +8,14 @@ use as few calls to it as possible.
 import random
 
 
-def compute_random_permutation(n):  # Time: O(n)
+def compute_random_permutation(n, function):  # Time: O(n)
     permutation = list(range(n))
-    _random_sampling(n, permutation)
+    function(n, permutation)
 
     return permutation
 
 
+# From exercise 5.12
 def _random_sampling(k, array):
     for i in range(k):
         r = random.randint(i, len(array) - 1)
@@ -22,6 +23,8 @@ def _random_sampling(k, array):
     return array
 
 
-assert(len(compute_random_permutation(5)) == 5)
-assert(compute_random_permutation(7) != [0, 1, 2, 3, 4, 5, 6])
-assert(sorted(compute_random_permutation(7)) == [0, 1, 2, 3, 4, 5, 6])
+assert(len(compute_random_permutation(5, _random_sampling)) == 5)
+assert(compute_random_permutation(
+    7, _random_sampling) != [0, 1, 2, 3, 4, 5, 6])
+assert(sorted(compute_random_permutation(
+    7, _random_sampling)) == [0, 1, 2, 3, 4, 5, 6])
