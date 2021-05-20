@@ -15,6 +15,7 @@ import random
 
 def random_subset(n, k):  # Time: O(k) | Space: O(k)
     changed_elements = {}
+
     for i in range(k):
         # Generate a random index between i and n - 1, inclusive.
         random_index = random.randrange(i, n)
