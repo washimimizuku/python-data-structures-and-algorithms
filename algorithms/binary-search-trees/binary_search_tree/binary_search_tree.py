@@ -4,6 +4,7 @@ class Node:
         self.left = None
         self.right = None
 
+
 class BinarySearchTree:
     def __init__(self):
         self.root = None
@@ -12,7 +13,6 @@ class BinarySearchTree:
         new_node = Node(data)
         if self.root == None:
             self.root = new_node
-            return
         else:
             current_node = self.root
             while True:
@@ -28,7 +28,6 @@ class BinarySearchTree:
                         return
                     else:
                         current_node = current_node.right
-                    
 
     def lookup(self, data):
         current_node = self.root
@@ -52,6 +51,7 @@ class BinarySearchTree:
             print(str(current_node.data))
             self.print_nodes(current_node.left)
             self.print_nodes(current_node.right)
+
 
 bst = BinarySearchTree()
 bst.insert(10)

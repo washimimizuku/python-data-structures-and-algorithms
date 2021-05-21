@@ -7,7 +7,7 @@ the output should be (1000000000000111).
 '''
 
 
-def reverse_bits(x):  # Time: O(n/L); L = width
+def reverse_bits(x):  # Time: O(n/L) | L = width
     MASK_SIZE = 16
     BIT_MASK = 0xFFFF
     PRECOMPUTED_REVERSE = {

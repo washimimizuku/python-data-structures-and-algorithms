@@ -3,11 +3,13 @@ def factorial(num):
         return 1
     return num * factorial(num-1)
 
+
 def fact(num):
     result = 1
     for i in range(1, num + 1):
         result = result * i
     return result
+
 
 print(factorial(6))
 print(fact(4))

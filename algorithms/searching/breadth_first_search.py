@@ -4,6 +4,7 @@ class Node:
         self.left = None
         self.right = None
 
+
 class BinarySearchTree:
     def __init__(self):
         self.root = None
@@ -12,7 +13,6 @@ class BinarySearchTree:
         new_node = Node(data)
         if self.root == None:
             self.root = new_node
-            return
         else:
             current_node = self.root
             while True:
@@ -28,7 +28,6 @@ class BinarySearchTree:
                         return
                     else:
                         current_node = current_node.right
-                    
 
     def lookup(self, data):
         current_node = self.root
@@ -58,7 +57,6 @@ class BinarySearchTree:
                 queue.append(current_node.right)
 
         return my_list
-            
 
     def breadth_first_search_recursive(self, queue, my_list):
         if len(queue) == 0:
@@ -86,4 +84,5 @@ binary_search_tree.insert(15)
 binary_search_tree.insert(1)
 
 print(binary_search_tree.breadth_first_search_iterative())
-print(binary_search_tree.breadth_first_search_recursive([binary_search_tree.root], []))
+print(binary_search_tree.breadth_first_search_recursive(
+    [binary_search_tree.root], []))

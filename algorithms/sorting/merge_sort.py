@@ -5,10 +5,9 @@ def merge_sort(array):
     middle = length // 2
     left = array[:middle]
     right = array[middle:]
-    #print(left)
-    #print(right)
 
     return merge(merge_sort(left), merge_sort(right))
+
 
 def merge(left, right):
     result = []
