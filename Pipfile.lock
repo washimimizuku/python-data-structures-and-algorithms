@@ -1,0 +1,61 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "b5116258847c7d927132d6c813822d87619431549553787ae5a601a875442f5d"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.9"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "bintrees": {
+            "hashes": [
+                "sha256:01c1968027c4da0c54f185bde2b7043ae5a826c0edd1beaef57da9c6cbe4d475",
+                "sha256:0b1faf7c2d7d5c0ee367901268fa19ef80360cbb16e88d0a27ecab5eeb01bfac",
+                "sha256:18e6a28b09c7821cc29d40d4192d6f051ad9e8febb5962b0c30829b6e3c6509a",
+                "sha256:5ac1a93476a5a84b20b2bd5fa43d486cd971ef9749b564eaf95c46244af02523",
+                "sha256:620b799e07849765a5107e56349a4c422576084c75323315690b2ac0cdf4a7e4",
+                "sha256:72bc8e2a9322011d8983980df4ce8e729781ec1ae63b41b8ee5fa34b41adb0b2",
+                "sha256:bfbc4dd3181609120d20ee73247521a8549644d129cd61582a986b1ef0671bd4",
+                "sha256:e180658d90789855dcb0e7d1eb2bfebc452d60c5b48e74de16b502d61a8352d1",
+                "sha256:fd447cf71e7a81073a91de75c56e7ca530fda563832b97d69fd882b9e0ef89b1"
+            ],
+            "index": "pypi",
+            "version": "==2.2.0"
+        }
+    },
+    "develop": {
+        "autopep8": {
+            "hashes": [
+                "sha256:276ced7e9e3cb22e5d7c14748384a5cf5d9002257c0ed50c0e075b68011bb6d0",
+                "sha256:aa213493c30dcdac99537249ee65b24af0b2c29f2e83cd8b3f68760441ed0db9"
+            ],
+            "index": "pypi",
+            "version": "==1.5.7"
+        },
+        "pycodestyle": {
+            "hashes": [
+                "sha256:514f76d918fcc0b55c6680472f0a37970994e07bbb80725808c17089be302068",
+                "sha256:c389c1d06bf7904078ca03399a4816f974a1d590090fecea0c63ec26ebaf1cef"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==2.7.0"
+        },
+        "toml": {
+            "hashes": [
+                "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b",
+                "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+            ],
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==0.10.2"
+        }
+    }
+}
