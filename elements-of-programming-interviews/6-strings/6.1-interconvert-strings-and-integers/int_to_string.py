@@ -3,7 +3,7 @@ Implement an integer to string conversion function
 '''
 
 
-def int_to_string(x):  # Time: O(n)
+def int_to_string(x):  # Time: O(n) | Space: O(1)
     is_negative = False
     if x < 0:
         x, is_negative = -x, True
