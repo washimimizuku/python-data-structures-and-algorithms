@@ -13,16 +13,16 @@ Note: Ignore spaces and capitalization
 from nose.tools import assert_equal
 
 
-def anagram(s1, s2):
+def anagram(s1, s2):  # My solution
     s1_clean, s2_clean = [], []
 
     for letter in s1:
         if letter != ' ':
-            s1_clean.append(letter)
+            s1_clean.append(letter.lower())
 
     for letter in s2:
         if letter != ' ':
-            s2_clean.append(letter)
+            s2_clean.append(letter.lower())
 
     s1_clean.sort()
     s2_clean.sort()
@@ -30,13 +30,40 @@ def anagram(s1, s2):
     return s1_clean == s2_clean
 
 
-assert(anagram('dog', 'god') == True)
-assert(anagram('clint eastwood', 'old west action') == True)
-assert(anagram('aa', 'bb') == False)
+def anagram2(s1, s2):  # Example solution 1
+    s1 = s1.replace(' ', '').lower()
+    s2 = s2.replace(' ', '').lower()
 
-"""
-RUN THIS CELL TO TEST YOUR SOLUTION
-"""
+    return sorted(s1) == sorted(s2)
+
+
+def anagram3(s1, s2):  # Example solution 2
+    s1 = s1.replace(' ', '').lower()
+    s2 = s2.replace(' ', '').lower()
+
+    # Edge case check
+    if len(s1) != len(s2):
+        return False
+
+    count = {}
+
+    for letter in s1:
+        if letter in count:
+            count[letter] += 1
+        else:
+            count[letter] = 1
+
+    for letter in s2:
+        if letter in count:
+            count[letter] -= 1
+        else:
+            count[letter] = 1
+
+    for k in count:
+        if count[k] != 0:
+            return False
+
+    return True
 
 
 class AnagramTest(object):
@@ -47,9 +74,16 @@ class AnagramTest(object):
         assert_equal(sol('hi man', 'hi     man'), True)
         assert_equal(sol('aabbcc', 'aabbc'), False)
         assert_equal(sol('123', '1 2'), False)
+        assert_equal(sol('dog', 'god'), True)
+        assert_equal(sol('clint eastwood', 'Old West action'), True)
+        assert_equal(sol('public relations', 'crap built on lies'), True)
+        assert_equal(sol('aa', 'bb'), False)
+        assert_equal(sol('aaa', 'AAA'), True)
         print("ALL TEST CASES PASSED")
 
 
 # Run Tests
 t = AnagramTest()
 t.test(anagram)
+t.test(anagram2)
+t.test(anagram3)
