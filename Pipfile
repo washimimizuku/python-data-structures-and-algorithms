@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 bintrees = "*"
+numpy = "*"
+matplotlib = "*"
 
 [dev-packages]
 autopep8 = "*"
