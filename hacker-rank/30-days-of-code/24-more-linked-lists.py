@@ -43,7 +43,6 @@ class Solution:
             current = current.next
 
     def removeDuplicates(self, head):
-        # Write your code here
         values_found = {}
         node_before = None
         current_node = head
