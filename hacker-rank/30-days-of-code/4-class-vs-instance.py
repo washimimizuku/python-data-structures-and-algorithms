@@ -41,14 +41,12 @@ class Person:
         self.age += 1
 
 
-if __name__ == '__main__':
-    person = Person(12)
-    person.am_i_old()
-    person.year_passes()
-    person.am_i_old()
-    person.year_passes()
-    person.year_passes()
-    person.year_passes()
-    person.year_passes()
-    person.year_passes()
-    person.am_i_old()
+t = int(input())
+for i in range(0, t):
+    age = int(input())
+    p = Person(age)
+    p.am_i_old()
+    for j in range(0, 3):
+        p.year_passes()
+    p.am_i_old()
+    print("")

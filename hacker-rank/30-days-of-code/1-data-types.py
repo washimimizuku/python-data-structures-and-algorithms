@@ -14,7 +14,7 @@ are already declared and initialized for you. You must:
 
 i = 4
 d = 4.0
-s = "HackerRank "
+s = 'HackerRank '
 
 # Declare second integer, double, and String variables.
 a = 0
