@@ -4,12 +4,6 @@
 https://www.hackerrank.com/challenges/arrays-ds
 '''
 
-import math
-import os
-import random
-import re
-import sys
-
 
 def reverse_array(a):
     return a[::-1]

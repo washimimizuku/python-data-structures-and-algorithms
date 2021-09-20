@@ -4,12 +4,6 @@
 https://www.hackerrank.com/challenges/ctci-array-left-rotation
 '''
 
-import math
-import os
-import random
-import re
-import sys
-
 
 def rot_left(a, d):
     return a[d:] + a[:d]
