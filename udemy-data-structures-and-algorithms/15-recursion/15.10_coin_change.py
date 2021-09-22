@@ -90,26 +90,44 @@ def rec_coin_dynam(target, coins, known_results):
     return min_coins
 
 
-# Run Test
-class TestCoins(object):
-
-    def check(self, solution):
-        coins = [1, 5, 10, 25]
-        assert_equal(solution(45, coins), 3)
-        assert_equal(solution(23, coins), 5)
-        assert_equal(solution(74, coins), 8)
-
-        print('Passed all tests.')
-
-
-test = TestCoins()
-# test.check(rec_coin)
-# test.check(rec_coin_dynam)
-
-
 target = 23
 coins = [1, 5, 10, 25]
 known_results = [0]*(target+1)
 
 print(rec_coin(target, coins))
 print(rec_coin_dynam(target, coins, known_results))
+
+
+'''
+Run Tests
+'''
+
+
+class TestCoins(object):
+
+    def check(self, solution):
+        coins = [1, 5, 10, 25]
+        assert_equal(solution(15, coins), 2)
+        assert_equal(solution(5, coins), 1)
+        assert_equal(solution(6, coins), 2)
+
+        print('Passed all tests.')
+
+
+test = TestCoins()
+test.check(rec_coin)
+
+
+class TestCoinsDynamic(object):
+
+    def check(self, solution):
+        coins = [1, 5, 10, 25]
+        assert_equal(solution(45, coins, [0]*46), 3)
+        assert_equal(solution(23, coins, [0]*24), 5)
+        assert_equal(solution(74, coins, [0]*75), 8)
+
+        print('Passed all tests.')
+
+
+test = TestCoinsDynamic()
+test.check(rec_coin_dynam)
