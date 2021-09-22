@@ -14,7 +14,6 @@ Else it returns fib(n-1)+fib(n+2).
 from nose.tools import assert_equal
 
 
-# Recursively
 def fib_rec(n):
 
     # Base Case
@@ -24,8 +23,6 @@ def fib_rec(n):
     # Recursion
     else:
         return fib_rec(n-1) + fib_rec(n-2)
-
-# Dynamically
 
 
 # Instantiate Cache information
@@ -47,8 +44,6 @@ def fib_dyn(n):
     cache[n] = fib_dyn(n-1) + fib_dyn(n-2)
 
     return cache[n]
-
-# Iteratively
 
 
 def fib_iter(n):
