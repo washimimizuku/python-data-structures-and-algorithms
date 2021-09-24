@@ -29,7 +29,7 @@ class Node:
         self.val = val
 
 
-def levelOrderPrint(tree):
+def level_order_print(tree):
 
     if not tree:
         return
@@ -63,4 +63,4 @@ root.right = Node(3)
 root.right.left = Node(5)
 root.right.right = Node(6)
 
-levelOrderPrint(root)
+level_order_print(root)
