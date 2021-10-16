@@ -107,3 +107,7 @@ h[3] = 'three'
 assert(h[1] == 'one')
 assert(h[2] == 'two')
 assert(h[3] == 'three')
+assert(h[4] == None)
+
+h[1] = 'new one'
+assert(h[1] == 'new one')
