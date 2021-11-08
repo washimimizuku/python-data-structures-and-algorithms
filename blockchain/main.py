@@ -36,3 +36,16 @@ class Blockchain:
         block.hash = block.get_hash()
 
         self.chain.append(block)
+
+    def is_valid(self):
+        # Iterate over the chain, we need to set i to 1 because there is nothing before the
+        # genesis block, so we start at the second block.
+        for i in range(1, len(self.chain)):
+            current_block = self.chain[i]
+            previous_block = self.chain[i - 1]
+
+            # Check validation
+            if (current_block.hash != current_block.get_hash() or previous_block.hash != current_block.previous_hash):
+                return False
+
+        return True
