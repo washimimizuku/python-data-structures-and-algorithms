@@ -1,5 +1,6 @@
 from hashlib import sha256
 from time import time
+import json
 
 
 class Block:
@@ -7,9 +8,9 @@ class Block:
     def __init__(self, timestamp=None, data=None):
         self.timestamp = timestamp or time()
         self.data = [] if data is None else data
-        self.hash = self.get_hash()
         self.previous_hash = None
         self.nonce = 0
+        self.hash = self.get_hash()
 
     def get_hash(self):
         new_hash = sha256()
@@ -38,6 +39,9 @@ class Blockchain:
         self.chain = [Block(str(int(time())))]
         self.difficulty = 1
 
+    def __repr__(self):
+        return json.dumps([{'data': item.data, 'timestamp': item.timestamp, 'nonce': item.nonce, 'hash': item.hash, 'previous_hash': item.previous_hash} for item in self.chain], indent=4)
+
     def get_last_block(self):
         return self.chain[len(self.chain) - 1]
 
@@ -62,3 +66,12 @@ class Blockchain:
                 return False
 
         return True
+
+
+if __name__ == '__main__':
+    test_chain = Blockchain()
+
+    test_chain.add_block(
+        Block(str(int(time())), ({"from": "John", "to": "Bob", "amount": 100})))
+
+    print(test_chain)
