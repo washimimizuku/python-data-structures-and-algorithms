@@ -38,6 +38,7 @@ class Blockchain:
         # This property will contain all the blocks
         self.chain = [Block(str(int(time())))]
         self.difficulty = 1
+        self.block_time = 30000
 
     def __repr__(self):
         return json.dumps([{'data': item.data, 'timestamp': item.timestamp, 'nonce': item.nonce, 'hash': item.hash, 'previous_hash': item.previous_hash} for item in self.chain], indent=4)
@@ -53,6 +54,9 @@ class Blockchain:
         block.mine(self.difficulty)
 
         self.chain.append(block)
+
+        self.difficulty += (-1, 1)[int(time()) -
+                                   int(self.get_last_block().timestamp) < self.block_time]
 
     def is_valid(self):
         # Iterate over the chain, we need to set i to 1 because there is nothing before the
